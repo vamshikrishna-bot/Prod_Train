@@ -1,0 +1,176 @@
+1). Range GCD Query
+
+n = int(input())
+a = list(map(int, input().split()))
+q = int(input())
+for _ in range(q):
+    d = list(map(int, input().split()))
+    if d[0] == 1:
+        i = data[1]
+        v = d[2]
+        a[i] = v
+    else:
+        l = d[1]
+        r = d[2]
+        ans = 0
+        for j in range(l, r + 1):
+            ans = gcd(ans, a[j])
+        print(ans)
+
+
+
+10). Bracket Sequence Range Query
+
+s = input()
+q = int(input())
+for _ in range(q):
+    l, r = map(int, input().split())
+    opening = 0
+    pairs = 0
+    for i in range(l, r + 1):
+        if s[i] == '(':
+            opening += 1
+        else:
+            if opening > 0:
+                opening -= 1
+                pairs += 1
+    print(pairs * 2)
+
+
+
+6). Count Zeros in a Range
+
+n = int(input())
+a = list(map(int, input().split()))
+q = int(input())
+for _ in range(q):
+    d = list(map(int, input().split()))
+    if d[0] == 1:
+        i = d[1]
+        v = d[2]
+        a[i] = v
+    else:
+        l = d[1]
+        r = d[2]
+        c = 0
+        for j in range(l, r + 1):
+            if a[j] == 0:
+                c += 1
+        print(c)
+
+
+4). K-th One in Binary Array
+
+n = int(input())
+a = list(map(int, input().split()))
+q = int(input())
+for _ in range(q):
+    d = list(map(int, input().split()))
+    if d[0] == 1:
+        i = d[1]
+        v = d[2]
+        a[i] = v
+    else:
+        k = d[1]
+        c = 0
+        ans = -1
+
+        for j in range(n):
+            if a[j] == 1:
+                c += 1
+                if c == k:
+                    ans = i
+                    break
+        print(ans)
+
+
+
+
+7). Longest Consecutive Ones
+
+n = int(input())
+a = list(map(int, input().split()))
+q = int(input())
+
+for _ in range(q):
+    d = list(map(int, input().split()))
+    if d[0] == 1:
+        i = d[1]
+        v = d[2]
+        a[i] = v
+    else:
+        l = d[1]
+        r = d[2]
+        curr = 0
+        maximum = 0
+        for j in range(l, r + 1):
+            if a[j] == 1:
+                curr += 1
+                if curr > maximum:
+                    maximum = curr
+            else:
+                curr = 0
+        print(maximum)
+
+
+9). Maximum Frequency in Sorted Array
+
+n = int(input())
+a = list(map(int, input().split()))
+q = int(input())
+for _ in range(q):
+    l, r = map(int, input().split())
+    maximum = 0
+    c = 0
+    previous = -1
+    for i in range(l, r + 1):
+        if a[i] == previous:
+            c += 1
+        else:
+            c = 1
+            previous = a[i]
+        if c > maximum:
+            maximum = c
+    print(maximum)
+
+
+
+2). Range Product Query
+
+n = int(input())
+a = list(map(int, input().split()))
+q = int(input())
+mod = 1000000007
+for _ in range(q):
+    d = list(map(int, input().split()))
+    if d[0] == 1:
+        i = d[1]
+        v = d[2]
+        a[i] = v
+    else:
+        l = d[1]
+        r = d[2]
+        ans = 1
+        for j in range(l, r + 1):
+            ans = (ans * a[j]) % mod
+        print(ans)
+
+
+
+3). Range Bitwise OR
+n = int(input())
+a = list(map(int, input().split()))
+q = int(input())
+for _ in range(q):
+    d = list(map(int, input().split()))
+    if d[0] == 1:
+        i = d[1]
+        v = d[2]
+        a[i] = v
+    else:
+        l = d[1]
+        r = d[2]
+        ans = 0
+        for i in range(l, r + 1):
+            ans = ans | a[i]
+        print(ans)
